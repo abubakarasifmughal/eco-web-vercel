@@ -1,16 +1,5 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+export const fetchTest = async () => {
+  const data = await fetch("http://127.0.0.1:4000/api/user");
 
-export const appApi = createApi({
-  baseQuery: fetchBaseQuery({
-    baseUrl: "/",
-  }),
-  endpoints: (build) => ({
-    testApi: build.mutation({
-      query: (arg) => ({
-        url: "/",
-        body: arg,
-        method: "POST",
-      }),
-    }),
-  }),
-});
+  return data.json();
+};
