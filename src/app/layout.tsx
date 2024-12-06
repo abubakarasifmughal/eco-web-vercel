@@ -1,7 +1,6 @@
+import StoreProvider from "@/libs/providers/StoreProvider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import StoreProvider from "@/providers/StoreProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -11,6 +10,7 @@ const geistSans = localFont({
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
+
   weight: "100 900",
 });
 
