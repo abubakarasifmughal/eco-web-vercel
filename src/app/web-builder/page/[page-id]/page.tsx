@@ -15,15 +15,16 @@ export default async function Index({
 
   return (
     <div>
-      {/* NOTE TO SELF: Moved to the query */}
-      {/* .sort((a, b) => (a.SortIndex > b.SortIndex ? 1 : -1)) */}
-      {page.Elements.map((pageElement) => (
-        <div key={pageElement.ID}>
-          {pageElement.Element.PathAlias}
-          {DynamicRenderer("Footer")()}
-          {/* {DyanmicRenderer(pageElement.Element.PathAlias)(prop)} */}
-        </div>
-      ))}
+      {page.Elements.map((pageElement) => {
+        const Renderer = DynamicRenderer(pageElement.Element.PathAlias);
+
+        return (
+          <div key={pageElement.ID}>
+            <p>{pageElement.Element.PathAlias}</p>
+            {Renderer ? <Renderer /> : <p>Component not found: {pageElement.Element.PathAlias}</p>}
+          </div>
+        );
+      })}
     </div>
   );
 }

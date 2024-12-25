@@ -2,7 +2,7 @@ import { getAllThemes } from "@/apis/themes";
 import Link from "next/link";
 
 export default async function Index() {
-  const themes = await getAllThemes("Bearer 2");
+  const themes = await getAllThemes("Bearer 1");
 
   return (
     <div>

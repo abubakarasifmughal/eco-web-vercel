@@ -2,7 +2,7 @@ import { getUserInfo } from "@/apis/user";
 import Link from "next/link";
 
 export default async function Index() {
-  const userInfo = await getUserInfo("Bearer 2");
+  const userInfo = await getUserInfo("Bearer 1");
 
   return (
     <div>
