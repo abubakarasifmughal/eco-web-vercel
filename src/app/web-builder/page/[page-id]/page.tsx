@@ -15,13 +15,17 @@ export default async function Index({
 
   return (
     <div>
-      {page.Elements.map((pageElement) => {
+      {page.Elements?.map((pageElement) => {
         const Renderer = DynamicRenderer(pageElement.Element.PathAlias);
-
+        const props = { links: [{ href: "/", label: "Home" }] };
         return (
           <div key={pageElement.ID}>
             <p>{pageElement.Element.PathAlias}</p>
-            {Renderer ? <Renderer /> : <p>Component not found: {pageElement.Element.PathAlias}</p>}
+            {Renderer ? (
+              <Renderer {...props} />
+            ) : (
+              <p>Component not found: {pageElement.Element.PathAlias}</p>
+            )}
           </div>
         );
       })}
