@@ -8,8 +8,6 @@ export default function Index() {
   const [colors, setColors] = useState<string[]>([]);
 
   const onPressColors = (pressedColor: string) => {
-    console.log(pressedColor);
-
     if (colors.includes(pressedColor)) {
       setColors(colors.filter((color) => color !== pressedColor));
     } else {

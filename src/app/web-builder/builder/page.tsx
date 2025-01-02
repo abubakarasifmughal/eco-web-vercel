@@ -1,39 +1,24 @@
-import { ReactNode } from "react";
+import BuilderLeftPanel from "@/components/BuilderLeftPanel";
+import BuilderRightPanel from "@/components/BuilderRightPanel";
+import { Header } from "@/components/Header";
+import { CanvasLayout } from "@/components/layouts/CanvasLayout";
+import { DropZone } from "@/components/DropZone";
+import { getAllThemes } from "@/apis/themes";
 
-export default function Index() {
+export default async function Index() {
+  const elements = await getAllThemes("Bearer 1");
+
   return (
-    <CanvasLayout leftPanel={<LeftPanel />} rightPanel={<RightPanel />}>
-      <div>hello</div>
+    <CanvasLayout
+      leftPanel={<BuilderLeftPanel isCollapsed={false} />}
+      rightPanel={<BuilderRightPanel themes={elements} />}
+    >
+      <div className="p-3 flex flex-col gap-10 text-white">
+        <Header />
+        <div>
+          <DropZone />
+        </div>
+      </div>
     </CanvasLayout>
-  );
-}
-
-function LeftPanel() {
-  return <div>Left Panel</div>;
-}
-
-function RightPanel() {
-  return <div>Left Panel</div>;
-}
-
-function CanvasLayout({
-  children,
-  leftPanel,
-  rightPanel,
-}: {
-  children: ReactNode;
-  leftPanel: ReactNode;
-  rightPanel: ReactNode;
-}) {
-  return (
-    <div className="flex flex-row min-h-screen">
-      <div className="min-w-[200pt] dark:bg-[#151520] text-white">
-        {leftPanel}
-      </div>
-      <div className="flex-1 bg-black">{children}</div>
-      <div className="min-w-[200pt] dark:bg-[#151520] text-white">
-        {rightPanel}
-      </div>
-    </div>
   );
 }
