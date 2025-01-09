@@ -50,6 +50,30 @@ const BuilderRightPanel = ({ themes }: { themes: ITheme[] }) => {
           alias={"__DropZone"}
           Icon={<BiSupport size={19} className="text-neutral-300 ml-2" />}
         />
+        <DraggableElement
+          key={"SearchBar"}
+          title={"SearchBar"}
+          alias={"SearchBar"}
+          Icon={<BiSupport size={19} className="text-neutral-300 ml-2" />}
+        />
+        <DraggableElement
+          key={"ProductList"}
+          title={"ProductList"}
+          alias={"ProductList"}
+          Icon={<BiSupport size={19} className="text-neutral-300 ml-2" />}
+        />
+        <DraggableElement
+          key={"Testimonials"}
+          title={"Testimonials"}
+          alias={"Testimonials"}
+          Icon={<BiSupport size={19} className="text-neutral-300 ml-2" />}
+        />
+        <DraggableElement
+          key={"AboutUs"}
+          title={"AboutUs"}
+          alias={"AboutUs"}
+          Icon={<BiSupport size={19} className="text-neutral-300 ml-2" />}
+        />
       </div>
       <button className="bg-[#5659FF] hover:bg-[#5653DD] active:bg-[#565ACC] w-full rounded-full py-2.5 flex flex-row justify-center gap-1">
         <AiOutlinePlus size={22} />
