@@ -1,21 +1,19 @@
-import { getPageById } from "@/apis/page";
-import { DynamicRenderer } from "@/libs/dynamic-renderer";
+// import { DynamicRenderer } from "@/libs/dynamic-renderer";
 
 export interface NavbarProps {
   links: { href: string; label: string }[];
 }
 
-export default async function Index({
-  params,
-}: {
+export default async function Index({}: // params,
+{
   params: { "page-id": number };
 }) {
-  const pageId = params["page-id"];
-  const page = await getPageById(pageId, "Bearer 1");
+  // const pageId = params["page-id"];
+  // const page = await getPageById(pageId, "Bearer 1");
 
   return (
     <div>
-      {page.Elements?.map((pageElement) => {
+      {/* {page.Elements?.map((pageElement: any) => {
         const Renderer = DynamicRenderer(pageElement.Element.PathAlias);
         const props = { links: [{ href: "/", label: "Home" }] };
         return (
@@ -28,7 +26,7 @@ export default async function Index({
             )}
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }
