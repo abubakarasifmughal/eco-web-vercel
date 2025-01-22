@@ -1,14 +1,14 @@
-import { getUserInfo } from "@/apis/user";
-import Link from "next/link";
+// import { getUserInfo } from "@/apis/user";
+// import Link from "next/link";
 
 export default async function Index() {
-  const userInfo = await getUserInfo("Bearer 1");
+  // const userInfo = await getUserInfo("Bearer 1");
 
   return (
     <div>
       <div>Welcome to Web Builder</div>
       <div>
-        <div>
+        {/* <div>
           Available Pages for {userInfo.Store.Name}{" "}
           <span className="capitalize">
             ({userInfo.Store.Category}
@@ -26,7 +26,7 @@ export default async function Index() {
               </Link>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
